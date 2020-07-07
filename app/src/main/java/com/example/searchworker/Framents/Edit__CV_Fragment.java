@@ -28,11 +28,13 @@ public class Edit__CV_Fragment extends Fragment {
     RelativeLayout edit_outgoing_relative_layout,edit_CV_Builder_personnel_information_relativeLayout,edit_CV_Builder_education_information_relativeLayout,
             edit_CV_Builder_experience_information_relativeLayout;
     TextInputEditText edit_name_Edit_text,edit_father_name_Edit_text,edit_Address_Edit_text,edit_date_Edit_text, edit_Phone_number_Edit_text,edit_CNIC_Edit_text,edit_Email_Edit_text,password_Edit_text,
-            edit_subject_Edit_text,edit_institution_Edit_text,edit_obatin_Edit_text,edit_total_Edit_text,edit_scholarship_Edit_text,edit_workPlace_Edit_text,edit_from_Edit_text,edit_to_Edit_text,edit_language_Edit_text;
+            edit_subject_Edit_text,edit_institution_Edit_text,edit_obatin_Edit_text,edit_total_Edit_text,edit_scholarship_Edit_text,edit_workPlace_Edit_text,edit_from_Edit_text,edit_to_Edit_text;
+                                    TextInputEditText     email_edit_text,TextInputEditText_password ;
     String name_string,father_name_string,Address_string,date_string, Phone_number_string,CNIC_string,Email_string,password_string,
             subject_string,education_string,institution_string,obatin_string,total_string,scholarship_string,workPlace_string,from_string,to_string;
-    Button clear_button,Add_education_button,clear_button_exper,Add_experiernce_button,edit_cancel_button,edit_next_button;
-    int count=0;
+    String Email,Password;
+    Button btnSignin,edit_personnel_cancel_button,edit_personnel_button,cancel_button_edit_education,edit_education_button,cancel_button_exper,edit_experiernce_button;
+
     private DatabaseReference reference;
     //handler for the splash screen
     private Handler handler = new Handler();
@@ -53,7 +55,7 @@ public class Edit__CV_Fragment extends Fragment {
         super.onCreate(savedInstanceState);
             v=new View(getContext());
         edit_outgoing_relative_layout=v.findViewById(R.id.edit_outgoing_relative_layout);
-        count=1;
+
         //splash screen
         handler.postDelayed(runnable, 500);
     }
@@ -64,7 +66,7 @@ public class Edit__CV_Fragment extends Fragment {
         // Inflate the layout for this fragment
         view= inflater.inflate(R.layout.fragment_edit___c_v_, container, false);
         education_spinner= (Spinner) view.findViewById(R.id.education_Information_spinner);
-        count=1;
+
         reference= FirebaseDatabase.getInstance().getReference(getString(R.string.database_resume_reference));
 
         // Create an ArrayAdapter using the string array and a default spinner layout
@@ -95,49 +97,78 @@ public class Edit__CV_Fragment extends Fragment {
         edit_workPlace_Edit_text=view.findViewById(R.id.edit_workPlace_Edit_text);
         edit_from_Edit_text=view.findViewById(R.id.edit_from_Edit_text);
         edit_to_Edit_text=view.findViewById(R.id.to_Edit_text);
-
+        TextInputEditText_password=view.findViewById(R.id.TextInputEditText_password);
+        email_edit_text=view.findViewById(R.id.email_edit_text);
         name_string=null;father_name_string=null;Address_string=null;date_string=null; Phone_number_string=null;CNIC_string=null;Email_string=null;password_string=null;
         subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;
 //connecting button
+        btnSignin=view.findViewById(R.id.btnSignin);
+        btnSignin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+             Email=email_edit_text.getText().toString().trim();
+             Password=TextInputEditText_password.getText().toString().trim();
+             if(Email.isEmpty())
+             {
+                 email_edit_text.setError("Enter emnail address");
+             }
+             if(Password.isEmpty())
+             {
+                 TextInputEditText_password.setError("Enter your account password");
+             }
+             if(!Email.isEmpty()&&! Password.isEmpty())
+             {
 
-
-        Add_education_button=view.findViewById(R.id.edit_education_button);
-        Add_education_button.setOnClickListener(new View.OnClickListener() {
+             }
+            }
+        });
+        edit_personnel_cancel_button=view.findViewById(R.id.edit_personnel_cancel_button);
+        edit_personnel_cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
             }
         });
-        clear_button_exper=view.findViewById(R.id.cancel_button_exper);
 
-        clear_button_exper.setOnClickListener(new View.OnClickListener() {
+        edit_personnel_button=view.findViewById(R.id.edit_personnel_button);
+        edit_personnel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                edit_workPlace_Edit_text.setText("");
-                edit_from_Edit_text.setText("");
-                edit_to_Edit_text.setText("");
+
             }
         });
-        Add_experiernce_button=view.findViewById(R.id.edit_experiernce_button);
-        Add_experiernce_button.setOnClickListener(new View.OnClickListener() {
+        cancel_button_edit_education=view.findViewById(R.id.cancel_button_edit_education);
+        cancel_button_edit_education.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                education_spinner.setAdapter(spinner_adapter);
-                edit_subject_Edit_text.setText("");
-                edit_obatin_Edit_text.setText("");
-                edit_total_Edit_text.setText("");
-                edit_scholarship_Edit_text.setText("");
-                edit_institution_Edit_text.setText("");
+
             }
         });
-        edit_cancel_button=view.findViewById(R.id.cancel_button);
-        edit_cancel_button.setOnClickListener(new View.OnClickListener() {
+
+        edit_education_button=view.findViewById(R.id.edit_education_button);
+        edit_education_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                clearAllData();
+
             }
         });
-        edit_next_button=view.findViewById(R.id.next_button);
+        cancel_button_exper=view.findViewById(R.id.clear_button_exper);
+        cancel_button_exper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        edit_experiernce_button=view.findViewById(R.id.edit_experiernce_button);
+        edit_experiernce_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+
+
 
         edit_next_button.setOnClickListener(new View.OnClickListener() {
             @Override

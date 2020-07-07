@@ -140,7 +140,7 @@ count=1;
                 institution_Edit_text.setText("");
             }
         });
-        cancel_button=view.findViewById(R.id.cancel_button);
+        cancel_button=view.findViewById(R.id.edit_personnel_cancel_button);
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
