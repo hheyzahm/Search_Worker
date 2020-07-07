@@ -24,7 +24,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/outgoing_relative_layout"
+        android:id="@+id/edit_outgoing_relative_layout"
         android:visibility="visible"
         android:layout_below="@+id/CV_Builder_imageView"
         >
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:id="@+id/login_textview"
@@ -118,13 +118,224 @@
                 </LinearLayout>
 
             </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/CV_edit_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/option_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_horizontal"
+                android:text="Select any option to Edit Data in CV"
+                android:textAllCaps="true"
+                android:paddingEnd="40dp"
+                android:paddingStart="40dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/CV_Builder_Linear_layout_skill_information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option_textview"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/Linear_Layout_container_Add_skill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:animateLayoutChanges="true"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/peronnel_card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="8dp"
+                    card_view:cardBackgroundColor="@android:color/black"
+                    android:layout_marginBottom="2dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/personnel"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"/>
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:id="@+id/peronel_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center_horizontal"
+                            android:text="Edit Personnel Information"
+                            android:textAllCaps="true"
+                            android:paddingEnd="40dp"
+                            android:paddingStart="40dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/education_card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="8dp"
+                    card_view:cardBackgroundColor="@android:color/black"
+                    android:layout_marginBottom="2dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:background="@android:color/white"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_margin="10dp"
+                            android:src="@drawable/reading"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"/>
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:id="@+id/education_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center_horizontal"
+                            android:text="Edit Education Information"
+                            android:textAllCaps="true"
+                            android:paddingEnd="40dp"
+                            android:paddingStart="40dp"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Experience_card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@android:color/black"
+                    android:layout_marginBottom="2dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/experiment" />
+
+                        <TextView
+                            android:id="@+id/experience_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center_horizontal"
+                            android:paddingStart="40dp"
+                            android:paddingEnd="40dp"
+                            android:text="Edit Experience Information"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/Skill_card_view"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="8dp"
+                    app:cardBackgroundColor="@android:color/black"
+                    android:layout_marginBottom="2dp"
+
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="92dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/icon"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_marginTop="10dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/consult" />
+
+                        <TextView
+                            android:textColor="@android:color/white"
+                            android:id="@+id/Skill_textview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="sans-serif-black"
+                            android:gravity="center_horizontal"
+                            android:paddingStart="60dp"
+                            android:paddingEnd="60dp"
+                            android:text="Edit Skill Informaation"
+                            android:textAllCaps="true"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
 
         </RelativeLayout>
         <RelativeLayout
-            android:id="@+id/CV_Builder_personnel_information_relativeLayout"
+            android:id="@+id/CV_edit_personnel_information_relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:visibility="gone">
 
             <TextView
@@ -144,18 +355,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/Personal_Information_textview"
-
+                android:layout_marginBottom="80dp"
                 android:orientation="horizontal">
 
                 <ScrollView
-                    android:id="@+id/CV_Builder__scroll_view"
+                    android:id="@+id/CV_edit__scroll_view"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:animateLayoutChanges="true">
 
                     <LinearLayout
 
-                        android:id="@+id/Linear_Layout_container_Add_personnel_data"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginTop="10dp"
@@ -170,7 +380,7 @@
                             android:hint="Your Good Name : ">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/name_Edit_text"
+                                android:id="@+id/edit_name_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -186,7 +396,7 @@
                             android:hint="Father Name : ">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/father_name_Edit_text"
+                                android:id="@+id/edit_father_name_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -220,7 +430,7 @@
                             android:hint="Date of Birth: erre">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/date_Edit_text"
+                                android:id="@+id/edit_date_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -237,7 +447,7 @@
                             android:hint="Phone Number :">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/Phone_number_Edit_text"
+                                android:id="@+id/edit_Phone_number_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -254,7 +464,7 @@
                             android:hint="CNIC : ">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/CNIC_Edit_text"
+                                android:id="@+id/edit_CNIC_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -270,7 +480,7 @@
                             android:hint="E-mail :">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/Email_Edit_text"
+                                android:id="@+id/edit_Email_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="20dp"
@@ -289,7 +499,7 @@
 
                             <com.google.android.material.textfield.TextInputEditText
 
-                                android:id="@+id/password_Edit_text"
+                                android:id="@+id/edit_password_Edit_text"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
@@ -304,12 +514,50 @@
 
                 </ScrollView>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/button_linearLayout"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                >
+                <Button
 
+                    android:id="@+id/cancel_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/button_backgroubnd"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="cancel"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+                    android:layout_weight="1"
+                    />
+                <Button
+
+                    android:layout_weight="1"
+                    android:id="@+id/edit_personnel_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+
+                    android:background="@drawable/button_backgroubnd"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Save"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:textSize="20sp"
+
+                    />
+            </LinearLayout>
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/CV_Builder_education_information_relativeLayout"
+            android:id="@+id/CV_edit_education_information_relativeLayout"
             android:visibility="gone"
 
             >
@@ -361,7 +609,7 @@
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/subject_Edit_text"
+                            android:id="@+id/edit_subject_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -377,7 +625,7 @@
                         android:hint="Name of Institution ">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/institution_Edit_text"
+                            android:id="@+id/edit_institution_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -394,7 +642,7 @@
                         android:hint="Obtained Marks :">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/obatin_Edit_text"
+                            android:id="@+id/edit_obatin_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -410,7 +658,7 @@
                         android:hint="Total Marks : ">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/total_Edit_text"
+                            android:id="@+id/edit_total_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -426,7 +674,7 @@
                         android:hint="ScholarShip (if Any): ">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/scholarship_Edit_text"
+                            android:id="@+id/edit_scholarship_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="15dp"
@@ -445,27 +693,27 @@
 
                     <Button
 
-                        android:id="@+id/clear_button"
+                        android:id="@+id/cancel_button_edit"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/button_backgroubnd"
                         android:fontFamily="sans-serif-medium"
-                        android:text="clear"
+                        android:text="Cancel"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="20sp" />
 
                     <Button
-                        android:id="@+id/Add_education_button"
+                        android:id="@+id/edit_education_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="6dp"
                         android:layout_weight="1"
                         android:background="@drawable/button_backgroubnd"
                         android:fontFamily="sans-serif-medium"
-                        android:text="Add Education"
+                        android:text="Save"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"
@@ -517,27 +765,26 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Work Place : "
-                        >
+                        android:hint="Work Place : ">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/workPlace_Edit_text"
+                            android:id="@+id/edit_workPlace_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
+                            android:digits="abcdefghijklmnopqrstuvwxyz , ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             android:gravity="center_horizontal"
                             android:inputType="text"
-                            tools:ignore="text"
-                            android:digits="abcdefghijklmnopqrstuvwxyz , ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            />
+                            tools:ignore="text" />
                     </com.google.android.material.textfield.TextInputLayout>
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="From : ">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/from_Edit_text"
+                            android:id="@+id/edit_from_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -571,125 +818,30 @@
                     android:id="@+id/experience_Information_linearLayout"
                     android:layout_marginBottom="5dp"
                     >
+
                     <Button
 
-                        android:id="@+id/clear_button_exper"
+                        android:id="@+id/cancel_button_exper"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:background="@drawable/button_backgroubnd"
                         android:fontFamily="sans-serif-medium"
-                        android:text="clear"
+                        android:text="Cancel"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        />
+                        android:textSize="20sp" />
+
                     <Button
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:id="@+id/Add_experiernce_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_backgroubnd"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Add Experience "
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp"
-
-                        />
-                </LinearLayout>
-            </LinearLayout>
-
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/CV_Builder_skill_information_relativeLayout"
-            android:visibility="gone"
-            android:layout_marginBottom="80dp"
-            android:gravity="center_horizontal"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Skill Information"
-                android:textAllCaps="true"
-                android:id="@+id/skill_Information_textview"
-                android:gravity="center_horizontal"
-                android:fontFamily="sans-serif-black"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_margin="10dp"
-                />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/CV_Builder_Linear_layout_skill_information"
-                android:layout_below="@id/skill_Information_textview">
-
-                <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:animateLayoutChanges="true"
-                    android:gravity="center"
-                    android:visibility="visible"
-                    android:id="@+id/Linear_Layout_container_Add_skill"
-                    android:layout_marginTop="10dp">
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Language : "
-                        >
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/language_Edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_horizontal"
-                            android:inputType="text"
-                            tools:ignore="text"
-                            android:digits="abcdefghijklmnopqrstuvwxyz , ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:id="@+id/skill_Information_linearLayout"
-                    android:layout_marginBottom="5dp"
-                    >
-                    <Button
-
-                        android:id="@+id/clear_button_skill"
+                        android:id="@+id/edit_experiernce_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:layout_weight="1"
                         android:background="@drawable/button_backgroubnd"
                         android:fontFamily="sans-serif-medium"
-                        android:text="clear"
-                        android:textAllCaps="false"
-                        android:textColor="@android:color/white"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        />
-                    <Button
-                        android:layout_margin="10dp"
-                        android:layout_weight="1"
-                        android:id="@+id/Add_skill_button"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/button_backgroubnd"
-                        android:fontFamily="sans-serif-medium"
-                        android:text="Add Skill"
+                        android:text="Save"
                         android:textAllCaps="false"
                         android:textColor="@android:color/white"
                         android:textSize="20sp"

@@ -12,10 +12,12 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.Switch;
 
+import com.example.searchworker.Entity.Record_of_Resume;
 import com.example.searchworker.R;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -24,14 +26,14 @@ import com.google.android.material.textfield.TextInputEditText;
  */
 public class CV_Builder_Fragment extends Fragment {
 RelativeLayout outgoing_relative_layout,CV_Builder_personnel_information_relativeLayout,CV_Builder_education_information_relativeLayout,
-        CV_Builder_experience_information_relativeLayout,CV_Builder_skill_information_relativeLayout;
+        CV_Builder_experience_information_relativeLayout;
     TextInputEditText name_Edit_text,father_name_Edit_text,Address_Edit_text,date_Edit_text, Phone_number_Edit_text,CNIC_Edit_text,Email_Edit_text,password_Edit_text,
             subject_Edit_text,institution_Edit_text,obatin_Edit_text,total_Edit_text,scholarship_Edit_text,workPlace_Edit_text,from_Edit_text,to_Edit_text,language_Edit_text;
     String name_string,father_name_string,Address_string,date_string, Phone_number_string,CNIC_string,Email_string,password_string,
-    subject_string,education_string,institution_string,obatin_string,total_string,scholarship_string,workPlace_string,from_string,to_string,language_string;
-    Button clear_button_skill,Add_skill_button,clear_button,Add_education_button,clear_button_exper,Add_experiernce_button,cancel_button,next_button;
+    subject_string,education_string,institution_string,obatin_string,total_string,scholarship_string,workPlace_string,from_string,to_string;
+    Button clear_button,Add_education_button,clear_button_exper,Add_experiernce_button,cancel_button,next_button;
 int count=0;
-
+    private DatabaseReference reference;
     //handler for the splash screen
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
@@ -67,7 +69,7 @@ count=1;
         view=inflater.inflate(R.layout.fragment_c_v__builder_, container, false);
         education_spinner= (Spinner) view.findViewById(R.id.education_Information_spinner);
 count=1;
-
+        reference= FirebaseDatabase.getInstance().getReference(getString(R.string.database_resume_reference));
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         spinner_adapter  = ArrayAdapter.createFromResource(getContext(), R.array.education_list, android.R.layout.simple_spinner_item);
@@ -77,7 +79,6 @@ count=1;
         CV_Builder_personnel_information_relativeLayout=view.findViewById(R.id.CV_Builder_personnel_information_relativeLayout);
         CV_Builder_education_information_relativeLayout=view.findViewById(R.id.CV_Builder_education_information_relativeLayout);
         CV_Builder_experience_information_relativeLayout=view.findViewById(R.id.CV_Builder_experience_information_relativeLayout);
-        CV_Builder_skill_information_relativeLayout=view.findViewById(R.id.CV_Builder_skill_information_relativeLayout);
 
         //splash screen
         handler.postDelayed(runnable, 500);
@@ -98,24 +99,11 @@ count=1;
         workPlace_Edit_text=view.findViewById(R.id.workPlace_Edit_text);
         from_Edit_text=view.findViewById(R.id.from_Edit_text);
         to_Edit_text=view.findViewById(R.id.to_Edit_text);
-        language_Edit_text=view.findViewById(R.id.language_Edit_text);
+
         name_string=null;father_name_string=null;Address_string=null;date_string=null; Phone_number_string=null;CNIC_string=null;Email_string=null;password_string=null;
-        subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;language_string=null;
+        subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;
 //connecting button
-        clear_button_skill=view.findViewById(R.id.clear_button_skill);
-        clear_button_skill.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        Add_skill_button=view.findViewById(R.id.Add_skill_button);
-       Add_skill_button.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-
-           }
-       });
         clear_button=view.findViewById(R.id.clear_button);
         clear_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,43 +118,33 @@ count=1;
 
             }
         });
-        clear_button_exper=view.findViewById(R.id.clear_button_exper);
+        clear_button_exper=view.findViewById(R.id.cancel_button_exper);
 
         clear_button_exper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+            workPlace_Edit_text.setText("");
+            from_Edit_text.setText("");
+            to_Edit_text.setText("");
             }
         });
         Add_experiernce_button=view.findViewById(R.id.Add_experiernce_button);
         Add_experiernce_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                education_spinner.setAdapter(spinner_adapter);
+                subject_Edit_text.setText("");
+                obatin_Edit_text.setText("");
+                total_Edit_text.setText("");
+                scholarship_Edit_text.setText("");
+                institution_Edit_text.setText("");
             }
         });
         cancel_button=view.findViewById(R.id.cancel_button);
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                name_Edit_text.setText("");
-                father_name_Edit_text.setText("");
-                Address_Edit_text.setText("");
-                date_Edit_text.setText("");
-                Phone_number_Edit_text.setText("");
-                CNIC_Edit_text.setText("");
-                Email_Edit_text.setText("");
-                password_Edit_text.setText("");
-                subject_Edit_text.setText("");
-                institution_Edit_text.setText("");
-                obatin_Edit_text.setText("");
-                total_Edit_text.setText("");
-                scholarship_Edit_text.setText("");
-                workPlace_Edit_text.setText("");
-                from_Edit_text.setText("");
-                to_Edit_text.setText("");
-                language_Edit_text.setText("");
-
+               clearAllData();
             }
         });
         next_button=view.findViewById(R.id.next_button);
@@ -215,6 +193,14 @@ if(CNIC_string.isEmpty())
 }
        if(!name_string.isEmpty()&&!father_name_string.isEmpty()&&!Address_string.isEmpty()&& ! date_string.isEmpty()&&!Phone_number_string.isEmpty()
                &&!Email_string.isEmpty() &&!password_string.isEmpty()   ) {
+           name_Edit_text.setText("");
+           father_name_Edit_text.setText("");
+           Address_Edit_text.setText("");
+           date_Edit_text.setText("");
+           Phone_number_Edit_text.setText("");
+           Email_Edit_text.setText("");
+           password_Edit_text.setText("");
+           CNIC_Edit_text.setText("");
             switch (count) {
                 case 1: {
                     education_string = education_spinner.getSelectedItem().toString().trim();
@@ -245,7 +231,6 @@ if(CNIC_string.isEmpty())
                            CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
                               CV_Builder_education_information_relativeLayout.setVisibility(View.VISIBLE);
                                CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
-                                CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
                     count++;
                         }
                     break;
@@ -270,36 +255,50 @@ if(CNIC_string.isEmpty())
                     CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
                     CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
                     CV_Builder_experience_information_relativeLayout.setVisibility(View.VISIBLE);
-                    CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
-                    count++;
+                    next_button.setText("Save");
+
                 }
                 break;
 
                 }
-                case 3: {
-                    language_string = language_Edit_text.getText().toString().trim();
-                    if(language_string.isEmpty())
-                    {
-                        language_Edit_text.setError("Language can't be empty");
-                    }
-                    if(!language_string.isEmpty()) {
-                        CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
-                        CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
-                        CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
-                        CV_Builder_skill_information_relativeLayout.setVisibility(View.VISIBLE);
-                        count = 1;
-                        next_button.setText("Save");
-                    }break;
-                }
+
 
             }
         }
     }
 });
+if(count==2&& next_button.getText().toString().equals("Save"))
+{
+    String id=reference.push().getKey();
 
+    Record_of_Resume record_of_resume=new Record_of_Resume(workPlace_string, from_string, to_string, subject_string,  education_string, institution_string,
+             obatin_string,  total_string, scholarship_string,  name_string,father_name_string,  Address_string,  date_string,  Phone_number_string,  CNIC_string
+            , Email_string,  password_string );
+    reference.child(id).setValue(record_of_resume);
+    clearAllData();
+}
         return view;
     }
+public void clearAllData()
+{
+    name_Edit_text.setText("");
+    father_name_Edit_text.setText("");
+    Address_Edit_text.setText("");
+    date_Edit_text.setText("");
+    Phone_number_Edit_text.setText("");
+    CNIC_Edit_text.setText("");
+    Email_Edit_text.setText("");
+    password_Edit_text.setText("");
+    subject_Edit_text.setText("");
+    institution_Edit_text.setText("");
+    obatin_Edit_text.setText("");
+    total_Edit_text.setText("");
+    scholarship_Edit_text.setText("");
+    workPlace_Edit_text.setText("");
+    from_Edit_text.setText("");
+    to_Edit_text.setText("");
 
+}
     @Override
     public void onStart() {
         count=1;
