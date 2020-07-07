@@ -12,7 +12,7 @@
     android:layout_marginBottom="35dp"
     android:layout_marginLeft="10dp">
     <ImageView
-        android:id="@+id/CV_Builder_imageView"
+        android:id="@+id/search_imageView"
         android:layout_width="80dp"
         android:layout_marginTop="20dp"
         android:layout_height="80dp"
@@ -20,57 +20,21 @@
         android:scaleType="center"
         android:src="@drawable/cv_b_v"
         />
-
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/edit_outgoing_relative_layout"
-        android:visibility="visible"
-        android:layout_below="@+id/CV_Builder_imageView"
-        >
-
-
-
-
-        <LinearLayout
+        android:layout_below="@id/search_imageView">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp">
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:id="@+id/button_linearLayout"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
-            >
-            <Button
-
-                android:id="@+id/cancel_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:background="@drawable/button_backgroubnd"
-                android:fontFamily="sans-serif-medium"
-                android:text="cancel"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                />
-            <Button
-
-                android:layout_weight="1"
-                android:id="@+id/next_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-
-                android:background="@drawable/button_backgroubnd"
-                android:fontFamily="sans-serif-medium"
-                android:text="next"
-                android:textAllCaps="false"
-                android:textColor="@android:color/white"
-                android:textSize="20sp"
-
-                />
-        </LinearLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/edit_recycler_view"/>
+</ScrollView>
     </RelativeLayout>
 
 </RelativeLayout>
