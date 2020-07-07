@@ -19,9 +19,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Education Information"
+            android:text="Skill Information"
             android:textAllCaps="true"
-            android:id="@+id/education_Information_textview"
+            android:id="@+id/skill_Information_textview"
             android:gravity="center_horizontal"
             android:fontFamily="sans-serif-black"
             android:textSize="20sp"
@@ -32,10 +32,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:id="@+id/CV_Builder_Linear_layout_personnel_information"
+            android:id="@+id/CV_Builder_Linear_layout_skill_information"
             android:layout_above="@id/button_linearLayout"
 
-            android:layout_below="@id/education_Information_textview">
+            android:layout_below="@id/skill_Information_textview">
 
                 <LinearLayout
                     android:layout_weight="1"
@@ -47,26 +47,15 @@
                     android:visibility="visible"
                     android:id="@+id/Linear_Layout_container_Add_data"
                     android:layout_marginTop="10dp">
-                    <Spinner
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="10dp"
-                        android:id="@+id/education_Information_spinner"
-                        android:fontFamily="sans-serif-light"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
-                        android:animateLayoutChanges="true"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/white"
-                        android:textSize="15sp" />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Major Subject : "
+                        android:hint="Language : "
                         >
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/subject_Edit_text"
+                            android:id="@+id/laguage_Edit_text"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
@@ -76,71 +65,7 @@
                             android:digits="abcdefghijklmnopqrstuvwxyz , ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Name of Institution ">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/institution_Edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_horizontal"
-
-                            android:inputType="text"
-
-                            android:digits="abcdefghijklmnopqrstuvwxyz , ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Obtained Marks :">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/obatin_Edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_horizontal"
-
-                            android:inputType="phone"
-                            tools:ignore="text"
-                            android:digits="0123456789."/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Total Marks : ">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/total_Edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_horizontal"
-
-                            android:inputType="phone"
-                            tools:ignore="text"
-                            android:digits="0123456789"/>
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="ScholarShip (if Any): ">
-
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/scholarship_Edit_text"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="20dp"
-                            android:gravity="center_horizontal"
-                            android:inputType="phone"
-                            tools:ignore="text"
-                            android:digits="0123456789. abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -151,7 +76,7 @@
                 >
                 <Button
 
-                    android:id="@+id/clear_button"
+                    android:id="@+id/clear_button_exper"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
@@ -166,12 +91,12 @@
                 <Button
                     android:layout_margin="10dp"
                     android:layout_weight="1"
-                    android:id="@+id/Add_education_button"
+                    android:id="@+id/Add_experiernce_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_backgroubnd"
                     android:fontFamily="sans-serif-medium"
-                    android:text="Add Education"
+                    android:text="Add Skill"
                     android:textAllCaps="false"
                     android:textColor="@android:color/white"
                     android:textSize="20sp"
