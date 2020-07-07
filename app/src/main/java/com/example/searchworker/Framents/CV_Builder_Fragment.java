@@ -27,6 +27,8 @@ RelativeLayout outgoing_relative_layout,CV_Builder_personnel_information_relativ
         CV_Builder_experience_information_relativeLayout,CV_Builder_skill_information_relativeLayout;
     TextInputEditText name_Edit_text,father_name_Edit_text,Address_Edit_text,date_Edit_text, Phone_number_Edit_text,CNIC_Edit_text,Email_Edit_text,password_Edit_text,
             subject_Edit_text,institution_Edit_text,obatin_Edit_text,total_Edit_text,scholarship_Edit_text,workPlace_Edit_text,from_Edit_text,to_Edit_text,language_Edit_text;
+    String name_string,father_name_string,Address_string,date_string, Phone_number_string,CNIC_string,Email_string,password_string,
+    subject_string,education_string,institution_string,obatin_string,total_string,scholarship_string,workPlace_string,from_string,to_string,language_string;
     Button clear_button_skill,Add_skill_button,clear_button,Add_education_button,clear_button_exper,Add_experiernce_button,cancel_button,next_button;
 int count=0;
 
@@ -97,6 +99,8 @@ count=1;
         from_Edit_text=view.findViewById(R.id.from_Edit_text);
         to_Edit_text=view.findViewById(R.id.to_Edit_text);
         language_Edit_text=view.findViewById(R.id.laguage_Edit_text);
+        name_string=null;father_name_string=null;Address_string=null;date_string=null; Phone_number_string=null;CNIC_string=null;Email_string=null;password_string=null;
+        subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;language_string=null;
 //connecting button
         clear_button_skill=view.findViewById(R.id.clear_button_skill);
         clear_button_skill.setOnClickListener(new View.OnClickListener() {
@@ -153,35 +157,125 @@ count=1;
 next_button.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
-        switch(count)
+        name_string=name_Edit_text.getText().toString().trim();
+        father_name_string=father_name_Edit_text.getText().toString().trim();
+        Address_string=Address_Edit_text.getText().toString().trim();
+        date_string=date_Edit_text.getText().toString().trim();
+        Phone_number_string=Phone_number_Edit_text.getText().toString().trim();
+        Email_string=Email_Edit_text.getText().toString().trim();
+        password_string=password_Edit_text.getText().toString().trim();
+        CNIC_string=CNIC_Edit_text.getText().toString().trim();
+        if(name_string.isEmpty())
+        { name_Edit_text.setError("Your Name can't be Empty");
+        }
+        if(father_name_string.isEmpty())
         {
-            case 1: {
-                CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_education_information_relativeLayout.setVisibility(View.VISIBLE);
-                CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
-                count++;
-                break;
-            }
-            case 2: {
-                CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_experience_information_relativeLayout.setVisibility(View.VISIBLE);
-                CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
-                count++;
+            father_name_Edit_text.setError("Father Name can't be Empty");
+        }
+        if(Address_string.isEmpty())
+        {
+            Address_Edit_text.setError("Address can't be Empty");
+        }
+        if(date_string.isEmpty())
+        {
+            date_Edit_text.setError("Date of Birth can't be Empty");
+        }
+        if(Phone_number_string.isEmpty())
+        {
+            Phone_number_Edit_text.setError("Phone Number can't be Empty");
+        }
+        if(Email_string.isEmpty())
+        {
+            Email_Edit_text.setError("Email Address can't be Empty");
+        }
+        if(password_string.isEmpty() )
+        {
+            password_Edit_text.setError("Password can't be Empty");
+        }
+if(CNIC_string.isEmpty())
+{
+    CNIC_Edit_text.setError("CNIC can't be Empty");
+}
+       if(!name_string.isEmpty()&&!father_name_string.isEmpty()&&!Address_string.isEmpty()&& ! date_string.isEmpty()&&!Phone_number_string.isEmpty()
+               &&!Email_string.isEmpty() &&!password_string.isEmpty()   ) {
+            switch (count) {
+                case 1: {
+                    education_string = education_spinner.getSelectedItem().toString().trim();
+                    subject_string = subject_Edit_text.getText().toString().trim();
+                    institution_string = institution_Edit_text.getText().toString().trim();
+                    obatin_string = obatin_Edit_text.getText().toString().trim();
+                    total_string = total_Edit_text.getText().toString().trim();
+                    scholarship_string = scholarship_Edit_text.getText().toString().trim();
+                        if(education_string.isEmpty()) {
+                        }
+                        if(!education_string.equals("Middle")||!education_string.equals("Matric")||! education_string.equals("Intermediate")) {
+                            if(subject_string.isEmpty()) {
+                            subject_Edit_text.setError("Subject can'tbe Empty");
+                            }
+                        }
+                        if(institution_string.isEmpty()) {
+                        institution_Edit_text.setError("Institution Address can't be empty");
+                        }
+                        if(obatin_string.isEmpty()) {
+                            obatin_Edit_text.setError("Obtained Marks can't be empty");
+                        }
+                        if(total_string.isEmpty()) {
+                        total_Edit_text.setError("Total Marks can't be empty");
+                        }
+
+                        if(!total_string.isEmpty()&&!obatin_string.isEmpty()&& !institution_string.isEmpty()&&!education_string.isEmpty())
+                        {
+                           CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
+                              CV_Builder_education_information_relativeLayout.setVisibility(View.VISIBLE);
+                               CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
+                                CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
+                    count++;
+                        }
+                    break;
+                }
+                case 2: {
+                    workPlace_string = workPlace_Edit_text.getText().toString().trim();
+                    from_string = from_Edit_text.getText().toString().trim();
+                    to_string = to_Edit_text.getText().toString().trim();
+                if(workPlace_string.isEmpty())
+                {
+                    workPlace_Edit_text.setError("Work Place can't be Empty");
+                }
+                if(from_string.isEmpty())
+                {
+                    from_Edit_text.setError("From Date for Work place can't be Empty");
+                }
+                if(to_string.isEmpty())
+                {
+                    to_Edit_text.setError("To date for Work place can't be empty");
+                }
+                if(!workPlace_string.isEmpty() && ! from_string.isEmpty() && !to_string.isEmpty()) {
+                    CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
+                    CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
+                    CV_Builder_experience_information_relativeLayout.setVisibility(View.VISIBLE);
+                    CV_Builder_skill_information_relativeLayout.setVisibility(View.GONE);
+                    count++;
+                }
                 break;
 
-            }
-            case 3: {
-                CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
-                CV_Builder_skill_information_relativeLayout.setVisibility(View.VISIBLE);
-                count=1;
-                next_button.setText("Save");
-                break;
-            }
+                }
+                case 3: {
+                    language_string = language_Edit_text.getText().toString().trim();
+                    if(language_string.isEmpty())
+                    {
+                        language_Edit_text.setError("Language can't be empty");
+                    }
+                    if(!language_string.isEmpty()) {
+                        CV_Builder_personnel_information_relativeLayout.setVisibility(View.GONE);
+                        CV_Builder_education_information_relativeLayout.setVisibility(View.GONE);
+                        CV_Builder_experience_information_relativeLayout.setVisibility(View.GONE);
+                        CV_Builder_skill_information_relativeLayout.setVisibility(View.VISIBLE);
+                        count = 1;
+                        next_button.setText("Save");
+                    }break;
+                }
 
+            }
         }
     }
 });
