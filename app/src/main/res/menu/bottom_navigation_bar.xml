@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/CV_Builder"
+        android:icon="@drawable/cv_builder"
+        android:title="CV Builder"
+        android:checked="true"
+        android:iconTint="@color/colorPrimary"/>
+
+    <item
+        android:id="@+id/Edit_CV"
+        android:icon="@drawable/edit_cv"
+        android:title="Edit CV"
+        android:iconTint="@color/colorAccent"/>
+    <item
+        android:id="@+id/Search_worker"
+        android:icon="@drawable/search"
+        android:title="Search worker"
+        android:iconTint="@color/colorPrimaryDark"/>
+</menu>

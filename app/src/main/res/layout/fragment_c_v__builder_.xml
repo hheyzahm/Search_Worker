@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_gravity="center"
+    android:gravity="center"
+
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="35dp"
+    android:layout_marginLeft="10dp">
+    <ImageView
+        android:id="@+id/CV_Builder_imageView"
+        android:layout_width="80dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="true"
+        android:scaleType="center"
+        android:src="@drawable/cv_b_v"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/outgoing_relatiiv_layout"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/button_linearLayout"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            >
+            <Button
+
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_backgroubnd"
+                android:fontFamily="sans-serif-medium"
+                android:text="cancel"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:layout_weight="1"
+                />
+            <Button
+
+                android:layout_weight="1"
+                android:id="@+id/next_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+
+                android:background="@drawable/button_backgroubnd"
+                android:fontFamily="sans-serif-medium"
+                android:text="next"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+
+                />
+        </LinearLayout>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/CV_Builder_imageView"
+        android:id="@+id/CV_Builder_relativeLayout"
+        android:visibility="visible"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Personal Information"
+            android:textAllCaps="true"
+            android:id="@+id/Personal_Information_textview"
+            android:gravity="center_horizontal"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_margin="10dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/CV_Builder_Linear_layout_personnel_information"
+            android:layout_above="@id/button_linearLayout"
+            android:layout_below="@id/Personal_Information_textview">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/CV_Builder__scroll_view"
+                android:animateLayoutChanges="true"
+                >
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:animateLayoutChanges="true"
+                    android:gravity="center"
+                    android:visibility="visible"
+                    android:id="@+id/Linear_Layout_container_Add_data"
+                    android:layout_marginTop="10dp">
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Your Good Name : "
+                        >
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/name_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+                            android:inputType="text"
+
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Father Name : ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/father_name_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:inputType="text"
+                            tools:ignore="number"
+                            android:digits="abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Address:">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Address_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:inputType="text"
+                            tools:ignore="text"
+                            android:digits="0123456789. abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Date of Birth: erre">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/picker"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:inputType="date"
+                            tools:ignore="text"
+                            android:digits="0123456789./-"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Phone Number :">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Phone_number_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:inputType="phone"
+                            tools:ignore="text"
+                            android:digits="0123456789 "/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="CNIC : ">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/CNIC_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:digits="0123456789-"
+                            android:gravity="center_horizontal"
+                            android:inputType="phone"
+                            tools:ignore="text" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="E-mail :">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/Email_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:gravity="center_horizontal"
+
+                            android:inputType="textEmailAddress"
+                            tools:ignore="text"
+                            android:digits="0123456789. @ abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="PassWord : "
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+
+                            android:id="@+id/password_Edit_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="20dp"
+                            android:textSize="18sp"
+                            android:gravity="center_horizontal"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="text"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+
+            </ScrollView>
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

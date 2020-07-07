@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Search Worker</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+        <string-array name="education_list">
+            <item>Middle </item>
+            <item>Matric</item>
+            <item>Intermediate</item>
+            <item>F.A</item>
+            <item>B.A</item>
+            <item>Bachelor of Science</item>
+            <item>Masters</item>
+            <item>M-Phil</item>
+            <item>PHD</item>
+        </string-array>
+
+</resources>
