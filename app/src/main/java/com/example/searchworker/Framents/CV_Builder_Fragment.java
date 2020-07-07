@@ -69,7 +69,7 @@ count=1;
         view=inflater.inflate(R.layout.fragment_c_v__builder_, container, false);
         education_spinner= (Spinner) view.findViewById(R.id.education_Information_spinner);
 count=1;
-        reference= FirebaseDatabase.getInstance().getReference(getString(R.string.database_resume_reference));
+        reference= FirebaseDatabase.getInstance().getReference(    getString(R.string.database_resume_reference));
 
         // Create an ArrayAdapter using the string array and a default spinner layout
         spinner_adapter  = ArrayAdapter.createFromResource(getContext(), R.array.education_list, android.R.layout.simple_spinner_item);
