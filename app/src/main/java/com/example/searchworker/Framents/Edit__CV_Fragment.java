@@ -100,14 +100,8 @@ public class Edit__CV_Fragment extends Fragment {
         subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;
 //connecting button
 
-        clear_button=view.findViewById(R.id.clear_button);
-        clear_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
-        });
-        Add_education_button=view.findViewById(R.id.Add_education_button);
+        Add_education_button=view.findViewById(R.id.edit_education_button);
         Add_education_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "521436154892",
+    "firebase_url": "https://searchworker-e90ad.firebaseio.com",
+    "project_id": "searchworker-e90ad",
+    "storage_bucket": "searchworker-e90ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:521436154892:android:1f9864ef3d03706f033229",
+        "android_client_info": {
+          "package_name": "com.example.searchworker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "521436154892-on145ht2oeaerk624hbgntr328trfuu3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.searchworker",
+            "certificate_hash": "53c4a6cc26423b1a1e05dd9acdf0d5e19d304346"
+          }
+        },
+        {
+          "client_id": "521436154892-6d78ev54i4vof2djkdl0sk039lng47fh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9jwNThP-VZBsjZEmouyFjM4CykpVyMX8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "521436154892-6d78ev54i4vof2djkdl0sk039lng47fh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

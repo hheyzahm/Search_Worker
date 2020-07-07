@@ -118,7 +118,7 @@ count=1;
 
             }
         });
-        clear_button_exper=view.findViewById(R.id.cancel_button_exper);
+        clear_button_exper=view.findViewById(R.id.clear_button_exper);
 
         clear_button_exper.setOnClickListener(new View.OnClickListener() {
             @Override
