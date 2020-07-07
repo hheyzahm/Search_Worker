@@ -98,7 +98,7 @@ count=1;
         workPlace_Edit_text=view.findViewById(R.id.workPlace_Edit_text);
         from_Edit_text=view.findViewById(R.id.from_Edit_text);
         to_Edit_text=view.findViewById(R.id.to_Edit_text);
-        language_Edit_text=view.findViewById(R.id.laguage_Edit_text);
+        language_Edit_text=view.findViewById(R.id.language_Edit_text);
         name_string=null;father_name_string=null;Address_string=null;date_string=null; Phone_number_string=null;CNIC_string=null;Email_string=null;password_string=null;
         subject_string=null;institution_string=null;obatin_string=null;total_string=null;scholarship_string=null;workPlace_string=null;from_string=null;to_string=null;language_string=null;
 //connecting button
@@ -149,6 +149,23 @@ count=1;
         cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                name_Edit_text.setText("");
+                father_name_Edit_text.setText("");
+                Address_Edit_text.setText("");
+                date_Edit_text.setText("");
+                Phone_number_Edit_text.setText("");
+                CNIC_Edit_text.setText("");
+                Email_Edit_text.setText("");
+                password_Edit_text.setText("");
+                subject_Edit_text.setText("");
+                institution_Edit_text.setText("");
+                obatin_Edit_text.setText("");
+                total_Edit_text.setText("");
+                scholarship_Edit_text.setText("");
+                workPlace_Edit_text.setText("");
+                from_Edit_text.setText("");
+                to_Edit_text.setText("");
+                language_Edit_text.setText("");
 
             }
         });

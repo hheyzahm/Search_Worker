@@ -8,6 +8,7 @@
     android:animateLayoutChanges="true"
     android:layout_gravity="center"
     android:gravity="center"
+    tools:context="com.example.searchworker.Framents.CV_Builder_Fragment"
     android:layout_marginRight="10dp"
     android:layout_marginBottom="35dp"
     android:layout_marginLeft="10dp">
